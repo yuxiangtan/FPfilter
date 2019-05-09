@@ -55,7 +55,7 @@ if __name__ == "__main__":
         print (__doc__)
         sys.exit(1)
     else:
-        optlist, cmd_list = getopt.getopt(sys.argv[1:], 'hv:p')
+        optlist, cmd_list = getopt.getopt(sys.argv[1:], 'hv:p:z')
     
     for opt in optlist:
         if opt[0] == '-h':
@@ -71,7 +71,8 @@ if __name__ == "__main__":
         log_error.write("Warning: The input file input_vcf does not exist in FPfilter.sh, exit.\n"); sys.exit(1)
         
     if not os.path.exists(FPfilter_path):
-        print ("Warning: The path of FPfilter folder is not correct, exit.\n")
+        print (FPfilter_path)
+	print ("Warning: The path of FPfilter folder is not correct, exit.\n")
         log_error.write("Warning: The path of FPfilter folder is not correct, exit.\n"); sys.exit(1)
         
     #step1
