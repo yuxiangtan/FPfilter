@@ -49,17 +49,17 @@ if __name__ == "__main__":
     list_args = sys.argv[1:]
     
     if '-h' in list_args:
-        print __doc__
+        print (__doc__)
         sys.exit(0)
     elif len(list_args) <2 or '-p' not in list_args or '-v' not in list_args:
-        print __doc__
+        print (__doc__)
         sys.exit(1)
     else:
         optlist, cmd_list = getopt.getopt(sys.argv[1:], 'hv:p')
     
     for opt in optlist:
         if opt[0] == '-h':
-            print __doc__; sys.exit(0)
+            print (__doc__); sys.exit(0)
         elif opt[0] == '-v': input_vcf =opt[1]
         elif opt[0] == '-p': FPfilter_path =opt[1]
     
@@ -67,11 +67,11 @@ if __name__ == "__main__":
     log_error=open(LOG_ERR,"a")
     #check files
     if not os.path.exists(input_vcf):
-        print "Warning: The input file input_vcf does not exist in FPfilter.sh, exit."
+        print ("Warning: The input file input_vcf does not exist in FPfilter.sh, exit.")
         log_error.write("Warning: The input file input_vcf does not exist in FPfilter.sh, exit.\n"); sys.exit(1)
         
     if not os.path.exists(FPfilter_path):
-        print "Warning: The path of FPfilter folder is not correct, exit.\n"
+        print ("Warning: The path of FPfilter folder is not correct, exit.\n")
         log_error.write("Warning: The path of FPfilter folder is not correct, exit.\n"); sys.exit(1)
         
     #step1
